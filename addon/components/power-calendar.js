@@ -19,7 +19,8 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     let changeCenter = (newCenter, calendar, e) => {
-      return this.get('changeCenterTask').perform(moment(newCenter), calendar, e);
+      // return this.get('changeCenterTask').perform(moment(newCenter), calendar, e);
+      return;
     };
     this.publicActions = {
       changeCenter,
@@ -76,13 +77,13 @@ export default Component.extend({
   },
 
   // Tasks
-  changeCenterTask: task(function* (newCenterMoment, calendar, e) {
-    yield this.get('onCenterChange')(
-      { date: newCenterMoment.toDate(), moment: newCenterMoment },
-      calendar,
-      e
-    );
-  }),
+  // changeCenterTask: task(function* (newCenterMoment, calendar, e) {
+  //   yield this.get('onCenterChange')(
+  //     { date: newCenterMoment.toDate(), moment: newCenterMoment },
+  //     calendar,
+  //     e
+  //   );
+  // }),
 
   // Methods
   registerCalendar() {
